@@ -11,15 +11,18 @@
   padding: 0;
 }
 
-html { font-size: 62.5%; }
+html {
+  font-size: 62.5%;
+}
 
 html,
 body,
 #root {
   height: 100%;
 }
+
 body {
-  background: var(--bg);
+  background: var(--surface);
   color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -49,24 +52,50 @@ body {
     color: inherit;
   }
 
-  button { cursor: pointer; }
+  button {
+    cursor: pointer;
+  }
 }
-ul {list-style-type: none;}
+
+ul {
+  list-style-type: none;
+}
 
 
 
 :root {
+  /* ===== Base Tone ===== */
   --bg: #ffffff;
-  --text: #111111;
-  --muted: #555555;
+  --surface: #f9fafb;
+  --surface-alt: #f3f4f6;
+  --text: #111827;
+  --dark-bl: #0f0f0f;
+  --muted: #6b7280;
   --border: #e5e7eb;
-  --surface: #fafafa;
 
+  /* ===== Brand Colors ===== */
   --primary: #239beb;
+  --primary-hover: #1f8ad4;
   --primary-contrast: #ffffff;
 
-  --radius-l: 1rem; /* 10px */
-  --radius-s: 0.5rem; /* 5px */
+  --secondary: #10b981; // emerald tone
+  --secondary-hover: #059669;
+  --accent: #f97316; // orange-500
+
+  /* ===== Status Colors ===== */
+  --success: #22c55e;
+  --warning: #facc15;
+  --danger: #ef4444;
+  --info: #3b82f6;
+
+  /* ===== Gradient / Depth ===== */
+  --gradient: linear-gradient(90deg, #239beb 0%, #10b981 100%);
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* ===== Radius & Focus ===== */
+  --radius-l: 1rem;
+  --radius-s: 0.5rem;
   --focus: #5b9fff;
 }
 
@@ -102,6 +131,7 @@ p {
   font-size: clamp(1.2rem, 1.4vw, 1.8rem);
   color: var(--text);
 }
+
 /* =========================
    Layout Utils
 ========================= */
@@ -109,21 +139,16 @@ p {
   max-width: 96rem;
   margin: 0 auto;
   padding: 0 1.6rem;
-
-}
-.container-sm {
-  min-width: 60rem;
-  padding: 2rem;
-  @media screen and (max-width:600px) {
-    min-width: auto;
-    
-  }
 }
 
-.section { padding: 2.4rem 0; }
+.section {
+  padding: 2.4rem 0;
+}
 
 section {
-  &.minvh { min-height: 100vh; }
+  &.minvh {
+    min-height: 100vh;
+  }
 }
 
 /* =========================
@@ -158,8 +183,13 @@ button {
   color: var(--text);
   transition: transform 0.02s ease-in-out, opacity 0.2s ease;
 
-  &:hover { transform: translateY(-0.1rem); }
-  &:active { transform: translateY(0); }
+  &:hover {
+    transform: translateY(-0.1rem);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 .btn {
@@ -181,7 +211,7 @@ button {
 }
 
 /* =========================
-   Code Block
+Code Block
 ========================= */
 pre {
   background: var(--surface);
